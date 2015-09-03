@@ -1,10 +1,14 @@
 mgraphics.init();
 
+mgraphics.relative_coords = 0;
+
 ctrl_pt_x1 = 50; ctrl_pt_y1 = 20;
 
 line_pt_y2 = 150; line_pt_y1 = 50; line_pt_x1 = 50;
 
-function paint()
+scene = 0;
+
+function paint_1()
 {
 	with (mgraphics)
 	{
@@ -20,7 +24,6 @@ function paint()
 		
 		move_to(0,100);
 		line_to(30, 100);
-		stroke();
 		
 		move_to(30, 100);//diagonal up
 		line_to(50,line_pt_y1);
@@ -42,7 +45,7 @@ function paint()
 		line_to(235, 100);
 		
 		move_to(235, 100);//diagonal up
-		line_to(250,line_pt_y1);
+		line_to(250, line_pt_y1);
 		
 		move_to(255, 100); //digonal down, half way
 		line_to(250, line_pt_y1);
@@ -58,16 +61,37 @@ function paint()
 	}
 }
 
+function paint_2()
+{
+	with (mgraphics)
+	{
+		// draw another scene here
+	}
+}
+
+// paint is continuously called by the mgraphics engine
+function paint()
+{
+	if (scene == 1) paint_1();
+
+	if (scene == 2) paint_2();
+}
+
 function bang()
 {
 	mgraphics.redraw();
+}
+
+function set_scene(v)
+{
+	scene = v;
+	post("scene is",scene);
 }
 
 function set_ctrl_pt_x1(v)
 {
 	ctrl_pt_x1 = v;
 }
-
 
 function set_line_pt_y1(z)
 {
