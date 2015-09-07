@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 129.0, 100.0, 871.0, 720.0 ],
+		"rect" : [ 146.0, 101.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -120,7 +120,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 786.0, 589.0, 168.0, 1441.0 ],
+					"patching_rect" : [ 786.0, 589.0, 171.0, 1441.0 ],
 					"style" : "",
 					"text" : "mgraphics.init();\n\nctrl_pt_x1 = 50; ctrl_pt_y1 = 20;\n\nline_pt_y2 = 150; line_pt_y1 = 50; line_pt_x1 = 50;\n\nfunction paint()\n{\n\twith (mgraphics)\n\t{\n\t\tcenter_x = 150;\n\t\tstart_x = center_x; start_y = 50;\n\t\tend_x = center_x; end_y = 150;\n\t\t\n\t\tmove_to(start_x,start_y);\n\t\tcurve_to(center_x-ctrl_pt_x1,start_y-ctrl_pt_y1, center_x-100,start_y+50, end_x,end_y);\n\n\t\tmove_to(start_x,start_y);\n\t\tcurve_to(center_x+ctrl_pt_x1,start_y-ctrl_pt_y1, center_x+100,start_y+50, end_x,end_y);\n\t\t\n\t\tmove_to(0,100);\n\t\tline_to(30, 100);\n\t\tstroke();\n\t\t\n\t\tmove_to(30, 100);//diagonal up\n\t\tline_to(50,line_pt_y1);\n\t\t\n\t\tmove_to(55, 100); //digonal down, half way\n\t\tline_to(50, line_pt_y1);\n\t\t\n\t\tmove_to(55, 100); //diagonal down, full way\n\t\tline_to(60, line_pt_y2); \n\t\t\n\t\tmove_to(70, 100); //diagonal up\n\t\tline_to(60, line_pt_y2);\n\t\t\n\t\tmove_to(70, 100); //line across\n\t\tline_to(95, 100);\n\t\t\n\t\t//right side of pwindow\n\t\tmove_to(205, 100);\n\t\tline_to(235, 100);\n\t\t\n\t\tmove_to(235, 100);//diagonal up\n\t\tline_to(250,line_pt_y1);\n\t\t\n\t\tmove_to(255, 100); //digonal down, half way\n\t\tline_to(250, line_pt_y1);\n\t\t\n\t\tmove_to(255, 100); //diagonal down, full way\n\t\tline_to(260, line_pt_y2);\n\t\t\n\t\tmove_to(270, 100); //diagonal up\n\t\tline_to(260, line_pt_y2);\n\t\t\n\t\tmove_to(270, 100); //line across\n\t\tline_to(295, 100);\n\t}\n}\n\nfunction bang()\n{\n\tmgraphics.redraw();\n}\n\nfunction set_ctrl_pt_x1(v)\n{\n\tctrl_pt_x1 = v;\n}\n\n\nfunction set_line_pt_y1(z)\n{\n\tline_pt_y1 = z;\n}\n\nfunction set_line_pt_x1(x)\n{\n\tline_pt_x1 = x;\n}\n\nfunction set_line_pt_y2(y)\n{\n\tline_pt_y2 = y;\n}"
 				}
@@ -388,7 +388,7 @@
 			}
 , 			{
 				"box" : 				{
-					"filename" : "BasicStrokes_AO.3.js",
+					"filename" : "BasicStrokes_AO.4.js",
 					"id" : "obj-1",
 					"maxclass" : "jsui",
 					"numinlets" : 1,
@@ -658,7 +658,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "BasicStrokes_AO.3.js",
+				"name" : "BasicStrokes_AO.4.js",
 				"bootpath" : "~/Desktop/heartbeat",
 				"type" : "TEXT",
 				"implicit" : 1
