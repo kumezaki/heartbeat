@@ -25,16 +25,46 @@ function paint()
 		move_to(start_x * aspect,start_y);
 		curve_to(center_x-ctrl_pt_x1, start_y+ctrl_pt_y1, center_x+0.7,start_y-0.3, end_x,end_y);
 		
-		move_to(-1.0 * aspect, -0.);
-		line_to(-.8 * aspect,  -0.);
+		move_to(-1.0 * aspect, -0.1);
+		line_to(-.85 * aspect, -0.1);
 		stroke();
 		
-		move_to(-.8 * aspect, -0);
-		line_to(-.7 * aspect, line_pt_y1);
+		move_to(-.85 * aspect, -0.1); //diagonal up
+		line_to(-.75 * aspect, line_pt_y1);
 		stroke();
 		
+		move_to(-.65 * aspect, -.1); //digonal down, half way
+		line_to(-.75 * aspect, line_pt_y1);
 		
-	
+		move_to(-.65 * aspect, -.1); //diagonal down, full way
+		line_to(-.55 * aspect, line_pt_y2); 
+		
+		move_to(-.45 * aspect, -.1); //diagonal up
+		line_to(-.55 * aspect, line_pt_y2);
+		
+		move_to(-.45 * aspect, -0.1); //line across
+		line_to(.45 * aspect, -0.1);
+		
+	    //right side
+		move_to(.32 * aspect, -0.1);
+		line_to(.45 * aspect, -0.1);
+		stroke();
+		
+		move_to(.45 * aspect, -0.1); //diagonal up
+		line_to(.55 * aspect, line_pt_y1);
+		stroke();
+		
+		move_to(.65 * aspect, -.1); //digonal down, half way
+		line_to(.55 * aspect, line_pt_y1);
+		
+		move_to(.65 * aspect, -.1); //diagonal down, full way
+		line_to(.75 * aspect, line_pt_y2);
+		
+		move_to(.85 * aspect, -.1); //diagonal up
+		line_to(.75 * aspect, line_pt_y2);
+		
+		move_to(.85 * aspect, -0.1); //line across
+		line_to(1. * aspect, -0.1);
 	}
 	
 }
@@ -44,3 +74,35 @@ function calcAspect()
 	var height = this.box.rect[3] - this.box.rect[1];
 	return width/height;
 	}
+
+
+function bang()
+{
+	mgraphics.redraw();
+}
+
+function set_scene(v)
+{
+	scene = v;
+	post("scene is",scene);
+}
+
+function set_ctrl_pt_x1(v)
+{
+	ctrl_pt_x1 = v;
+}
+
+function set_line_pt_y1(z)
+{
+	line_pt_y1 = z;
+}
+
+function set_line_pt_x1(x)
+{
+	line_pt_x1 = x;
+}
+
+function set_line_pt_y2(y)
+{
+	line_pt_y2 = y;
+}
