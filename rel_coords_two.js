@@ -94,8 +94,7 @@ function paint_2()
  	with (mgraphics)
 	{
 		// another scene goes here
-		
-	set_source_rgba(0.5, 0.5, 0.5, 1.);
+		set_source_rgba(0.5, 0.5, 0.5, 1.);
 		
 		move_to(-1.0 * aspect, -0.1);
 		line_to(-.85 * aspect, -0.1);
@@ -158,9 +157,6 @@ function paint_2()
 		move_to(start_x * aspect,start_y);
 		curve_to(center_x-ctrl_pt_x1, start_y+ctrl_pt_y1, center_x+0.2,start_y-0.3, end_x,end_y);
 		fill();
-			
-		
-		
 		
 	}
 }

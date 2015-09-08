@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 252.0, 79.0, 842.0, 728.0 ],
+		"rect" : [ 65.0, 79.0, 894.0, 728.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,25 +38,12 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-11",
-					"linecount" : 288,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 695.0, 608.0, 157.0, 3881.0 ],
-					"style" : "",
-					"text" : "mgraphics.init();\nmgraphics.relative_coords = 1;\nmgraphics.autofill = 0;\n\nctrl_pt_x1 = -0.7; ctrl_pt_y1 = 0.3;\n\nline_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;\n\nfunction paint_1()\n\n{ \n\t var aspect = calcAspect();\n\t with (mgraphics)\n   \n\t\n\t{\n\t\tset_source_rgba(1., 0., 0., 1.);\n\t\t\n\t\t\n\t\tcenter_x = 0.;\n\t\tstart_x = center_x; start_y = 0.2;\n\t\tend_x = center_x; end_y = -0.7;\n\t\t\n\t\tmove_to(start_x * aspect,start_y);\n\t\tcurve_to(center_x+ctrl_pt_x1, start_y+ctrl_pt_y1, center_x-0.7,start_y-0.3, end_x,end_y);\n\t\t         // 0 + -0.6             0.2 + 0.6          0 -0.6        0.2 - 0.2   0. -.7\n\n\t\tmove_to(start_x * aspect,start_y);\n\t\tcurve_to(center_x-ctrl_pt_x1, start_y+ctrl_pt_y1, center_x+0.7,start_y-0.3, end_x,end_y);\n\t\tfill();\n\t\t\n\n\t\t\n\t\tset_source_rgba(0.5, 0.5, 1., 1.);\n\t\t\n\t\tmove_to(-1.0 * aspect, -0.1);\n\t\tline_to(-.85 * aspect, -0.1);\n\t\tstroke();\n\t\tfill();\n\t\t\n\t\tmove_to(-.85 * aspect, -0.1); //diagonal up\n\t\tline_to(-.75 * aspect, line_pt_y1);\n\t\tstroke();\n\t\t\n\t\tmove_to(-.65 * aspect, -.1); //digonal down, half way\n\t\tline_to(-.75 * aspect, line_pt_y1);\n\t\t\n\t\tmove_to(-.65 * aspect, -.1); //diagonal down, full way\n\t\tline_to(-.55 * aspect, line_pt_y2); \n\t\t\n\t\tmove_to(-.45 * aspect, -.1); //diagonal up\n\t\tline_to(-.55 * aspect, line_pt_y2);\n\t\t\n\t\tmove_to(-.45 * aspect, -0.1); //line across\n\t\tline_to(.45 * aspect, -0.1);\n\t\t\n\t    //right side\n\t\tmove_to(.32 * aspect, -0.1);\n\t\tline_to(.45 * aspect, -0.1);\n\t\tstroke();\n\t\t\n\t\tmove_to(.45 * aspect, -0.1); //diagonal up\n\t\tline_to(.55 * aspect, line_pt_y1);\n\t\tstroke();\n\t\t\n\t\tmove_to(.65 * aspect, -.1); //digonal down, half way\n\t\tline_to(.55 * aspect, line_pt_y1);\n\t\tstroke();\n\t\t\n\t\tmove_to(.65 * aspect, -.1); //diagonal down, full way\n\t\tline_to(.75 * aspect, line_pt_y2);\n\t\tstroke();\n\t\t\n\t\tmove_to(.85 * aspect, -.1); //diagonal up\n\t\tline_to(.75 * aspect, line_pt_y2);\n\t\tstroke();\n\t\t\n\t\tmove_to(.85 * aspect, -0.1); //line across\n\t\tline_to(1. * aspect, -0.1);\n\t\tstroke();\n\t}\n\t\n}\n\nfunction calcAspect()\n{ var width = this.box.rect[2] - this.box.rect[0];\n\tvar height = this.box.rect[3] - this.box.rect[1];\n\treturn width/height;\n}\n\nfunction paint_2()\n{\n\tvar aspect = calcAspect();\n \twith (mgraphics)\n\t{\n\t\t// another scene goes here\n\t\t\n\tset_source_rgba(0.5, 0.5, 0.5, 1.);\n\t\t\n\t\tmove_to(-1.0 * aspect, -0.1);\n\t\tline_to(-.85 * aspect, -0.1);\n\t\tstroke();\n\t\tfill();\n\t\t\n\t\tmove_to(-.85 * aspect, -0.1); //diagonal up\n\t\tline_to(-.75 * aspect, line_pt_y1-0.3);\n\t\tstroke();\n\t\t\n\t\tmove_to(-.65 * aspect, -.1); //digonal down, half way\n\t\tline_to(-.75 * aspect, line_pt_y1-0.3);\n\t\t\n\t\tmove_to(-.65 * aspect, -.1); //diagonal down, full way\n\t\tline_to(-.55 * aspect, line_pt_y2 +0.3); \n\t\t\n\t\tmove_to(-.45 * aspect, -.1); //diagonal up\n\t\tline_to(-.55 * aspect, line_pt_y2 + 0.3);\n\t\t\n\t\tmove_to(-.45 * aspect, -0.1); //line across\n\t\tline_to(.45 * aspect, -0.1);\n\t\t\n\t    //right side\n\t\tmove_to(.32 * aspect, -0.1);\n\t\tline_to(.45 * aspect, -0.1);\n\t\tstroke();\n\t\t\n\t\tmove_to(.45 * aspect, -0.1); //diagonal up\n\t\tline_to(.55 * aspect, line_pt_y1 - 0.3);\n\t\tstroke();\n\t\t\n\t\tmove_to(.65 * aspect, -.1); //digonal down, half way\n\t\tline_to(.55 * aspect, line_pt_y1 - 0.3);\n\t\tstroke();\n\t\t\n\t\tmove_to(.65 * aspect, -.1); //diagonal down, full way\n\t\tline_to(.75 * aspect, line_pt_y2 + 0.3);\n\t\tstroke();\n\t\t\n\t\tmove_to(.85 * aspect, -.1); //diagonal up\n\t\tline_to(.75 * aspect, line_pt_y2 + 0.3);\n\t\tstroke();\n\t\t\n\t\tmove_to(.85 * aspect, -0.1); //line across\n\t\tline_to(1. * aspect, -0.1);\n\t\tstroke();\n\t\t\t\n\t\t\n\t\t//heart\n\t\tset_source_rgba(1., 0.5, 0.5, 1.);\n\t\t\n\t\tcenter_x = 0.;\n\t\tstart_x = center_x; start_y = 0.1;\n\t\tend_x = center_x; end_y = -0.4;\n\t\t\n\t\tmove_to(start_x * aspect,start_y);\n\t\tcurve_to(center_x+ctrl_pt_x1, start_y+ctrl_pt_y1, center_x-0.2,start_y-0.3, end_x,end_y);\n\t\t         // 0 + -0.6             0.2 + 0.6          0 -0.4        0.2 - 0.2   0. -.7\n\n\t\tmove_to(start_x * aspect,start_y);\n\t\tcurve_to(center_x-ctrl_pt_x1, start_y+ctrl_pt_y1, center_x+0.2,start_y-0.3, end_x,end_y);\n\t\tfill();\n\t\t\t\n\t\t\n\t\t\n\t\t\n\t}\n}\n\n//paint is continuously called by the mgraphics engine\nfunction paint()\n{\n\tif (scene == 1) paint_1()\n\tif (scene == 2) paint_2()\n}\nfunction bang()\n{\n\tmgraphics.redraw();\n}\n\nfunction set_scene(v)\n{\n\tscene = v;\n\tpost(\"scene is\",scene);\n}\n\nfunction set_ctrl_pt_x1(v)\n{\n\tctrl_pt_x1 = v;\n}\n\nfunction set_line_pt_y1(z)\n{\n\tline_pt_y1 = z;\n}\n\nfunction set_line_pt_x1(x)\n{\n\tline_pt_x1 = x;\n}\n\nfunction set_line_pt_y2(y)\n{\n\tline_pt_y2 = y;\n}\n"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-55",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 99.5, 353.5, 24.0, 24.0 ],
+					"patching_rect" : [ 99.5, 340.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -343,7 +330,7 @@
 			}
 , 			{
 				"box" : 				{
-					"filename" : "rel_coords_one.js",
+					"filename" : "rel_coords_two.js",
 					"id" : "obj-1",
 					"maxclass" : "jsui",
 					"numinlets" : 1,
@@ -351,6 +338,19 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 56.0, 411.0, 536.0, 287.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"linecount" : 164,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 618.0, 585.0, 158.0, 2205.0 ],
+					"style" : "",
+					"text" : "mgraphics.init();\nmgraphics.relative_coords = 1;\nmgraphics.autofill = 0;\n\nctrl_pt_x1 = -0.7; ctrl_pt_y1 = 0.3;\n\nline_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;\n\nfunction paint_1()\n\n{ var aspect =calcAspect();\n\t\n\twith (mgraphics)\n\t\n\t{\n\t\t\n\t\tcenter_x = 0.;\n\t\tstart_x = center_x; start_y = 0.2;\n\t\tend_x = center_x; end_y = -0.7;\n\t\t\n\t\tmove_to(start_x * aspect,start_y);\n\t\tcurve_to(center_x+ctrl_pt_x1, start_y+ctrl_pt_y1, center_x-0.7,start_y-0.3, end_x,end_y);\n\t\t         // 0 + -0.6             0.2 + 0.6          0 -0.6        0.2 - 0.2   0. -.7\n\n\t\tmove_to(start_x * aspect,start_y);\n\t\tcurve_to(center_x-ctrl_pt_x1, start_y+ctrl_pt_y1, center_x+0.7,start_y-0.3, end_x,end_y);\n\t\t\n\t\tmove_to(-1.0 * aspect, -0.1);\n\t\tline_to(-.85 * aspect, -0.1);\n\t\tstroke();\n\t\t\n\t\tmove_to(-.85 * aspect, -0.1); //diagonal up\n\t\tline_to(-.75 * aspect, line_pt_y1);\n\t\tstroke();\n\t\t\n\t\tmove_to(-.65 * aspect, -.1); //digonal down, half way\n\t\tline_to(-.75 * aspect, line_pt_y1);\n\t\t\n\t\tmove_to(-.65 * aspect, -.1); //diagonal down, full way\n\t\tline_to(-.55 * aspect, line_pt_y2); \n\t\t\n\t\tmove_to(-.45 * aspect, -.1); //diagonal up\n\t\tline_to(-.55 * aspect, line_pt_y2);\n\t\t\n\t\tmove_to(-.45 * aspect, -0.1); //line across\n\t\tline_to(.45 * aspect, -0.1);\n\t\t\n\t    //right side\n\t\tmove_to(.32 * aspect, -0.1);\n\t\tline_to(.45 * aspect, -0.1);\n\t\tstroke();\n\t\t\n\t\tmove_to(.45 * aspect, -0.1); //diagonal up\n\t\tline_to(.55 * aspect, line_pt_y1);\n\t\tstroke();\n\t\t\n\t\tmove_to(.65 * aspect, -.1); //digonal down, half way\n\t\tline_to(.55 * aspect, line_pt_y1);\n\t\t\n\t\tmove_to(.65 * aspect, -.1); //diagonal down, full way\n\t\tline_to(.75 * aspect, line_pt_y2);\n\t\t\n\t\tmove_to(.85 * aspect, -.1); //diagonal up\n\t\tline_to(.75 * aspect, line_pt_y2);\n\t\t\n\t\tmove_to(.85 * aspect, -0.1); //line across\n\t\tline_to(1. * aspect, -0.1);\n\t}\n\t\n}\n\nfunction calcAspect()\n{ var width = this.box.rect[2] - this.box.rect[0];\n\tvar height = this.box.rect[3] - this.box.rect[1];\n\treturn width/height;\n}\n\nfunction paint_2()\n{\n \twith (mgraphics)\n\t{\n\t\t// another scene goes here\n\t}\n}\n\n//paint is continuously called by the mgraphics engine\nfunction paint()\n{\n\tif (scene == 1) paint_1()\n\tif (scene == 2) paint_2()\n}\nfunction bang()\n{\n\tmgraphics.redraw();\n}\n\nfunction set_scene(v)\n{\n\tscene = v;\n\tpost(\"scene is\",scene);\n}\n\nfunction set_ctrl_pt_x1(v)\n{\n\tctrl_pt_x1 = v;\n}\n\nfunction set_line_pt_y1(z)\n{\n\tline_pt_y1 = z;\n}\n\nfunction set_line_pt_x1(x)\n{\n\tline_pt_x1 = x;\n}\n\nfunction set_line_pt_y2(y)\n{\n\tline_pt_y2 = y;\n}\n"
 				}
 
 			}
@@ -520,7 +520,7 @@
 					"destination" : [ "obj-1", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 109.0, 326.0, 65.5, 326.0 ],
+					"midpoints" : [ 109.0, 320.0, 65.5, 320.0 ],
 					"source" : [ "obj-50", 0 ]
 				}
 
@@ -530,7 +530,6 @@
 					"destination" : [ "obj-55", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 109.0, 296.5, 109.0, 296.5 ],
 					"source" : [ "obj-50", 0 ]
 				}
 
@@ -549,7 +548,7 @@
 					"destination" : [ "obj-1", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 126.5, 343.5, 65.5, 343.5 ],
+					"midpoints" : [ 126.5, 337.5, 65.5, 337.5 ],
 					"source" : [ "obj-53", 0 ]
 				}
 
@@ -559,7 +558,7 @@
 					"destination" : [ "obj-55", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 126.5, 341.0, 109.0, 341.0 ],
+					"midpoints" : [ 126.5, 335.0, 109.0, 335.0 ],
 					"source" : [ "obj-53", 0 ]
 				}
 
@@ -595,7 +594,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "rel_coords_one.js",
+				"name" : "rel_coords_two.js",
 				"bootpath" : "~/Desktop/heartbeat",
 				"type" : "TEXT",
 				"implicit" : 1
