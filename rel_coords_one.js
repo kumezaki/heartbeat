@@ -6,30 +6,43 @@ ctrl_pt_x1 = -0.7; ctrl_pt_y1 = 0.3;
 
 line_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;
 
-function paint_1()
+heart_center_x = 0.;
 
-{ 
-	 var aspect = calcAspect();
-	 with (mgraphics)
-   
-	
+function paint_heart(r,g,b,a,center_x)
+{
+	var aspect = calcAspect();
+
+	with (mgraphics)
 	{
-		set_source_rgba(1., 0., 0., 1.);
+		set_source_rgba(r,g,b,a);
 		
-		
-		center_x = 0.;
 		start_x = center_x; start_y = 0.2;
 		end_x = center_x; end_y = -0.7;
 		
 		move_to(start_x * aspect,start_y);
 		curve_to(center_x+ctrl_pt_x1, start_y+ctrl_pt_y1, center_x-0.7,start_y-0.3, end_x,end_y);
-		         // 0 + -0.6             0.2 + 0.6          0 -0.6        0.2 - 0.2   0. -.7
-
+	
 		move_to(start_x * aspect,start_y);
 		curve_to(center_x-ctrl_pt_x1, start_y+ctrl_pt_y1, center_x+0.7,start_y-0.3, end_x,end_y);
+	
 		fill();
-		
+	}
+}
 
+function paint_1()
+
+{
+ 	 var aspect = calcAspect();
+	post(aspect,"\n");
+
+
+	 with (mgraphics)
+   
+	
+	{
+		paint_heart(0., 0., 1., 1.,heart_center_x);
+		
+		// do the same for paint_lines here, and then call it before paint_heart
 		
 		set_source_rgba(0.5, 0.5, 1., 1.);
 		
@@ -78,6 +91,7 @@ function paint_1()
 		move_to(.85 * aspect, -0.1); //line across
 		line_to(1. * aspect, -0.1);
 		stroke();
+
 	}
 	
 }
@@ -168,9 +182,23 @@ function paint_2()
 //paint is continuously called by the mgraphics engine
 function paint()
 {
-	if (scene == 1) paint_1()
-	if (scene == 2) paint_2()
+//	if (scene == 1) paint_1()
+//	if (scene == 2) paint_2()
+	
+	switch (scene)
+	{
+		case 1:
+			paint_1()
+			break;
+		case 2:
+			paint_2()
+			break;
+		default:
+			post("scene "+scene+" unknown\n")
+			break;
+	}
 }
+
 function bang()
 {
 	mgraphics.redraw();
@@ -182,14 +210,14 @@ function set_scene(v)
 	post("scene is",scene);
 }
 
-function set_ctrl_pt_x1(v)
+function set_ctrl_pt_x1(x)
 {
-	ctrl_pt_x1 = v;
+	ctrl_pt_x1 = x;
 }
 
-function set_line_pt_y1(z)
+function set_line_pt_y1(y)
 {
-	line_pt_y1 = z;
+	line_pt_y1 = y;
 }
 
 function set_line_pt_x1(x)
@@ -200,4 +228,9 @@ function set_line_pt_x1(x)
 function set_line_pt_y2(y)
 {
 	line_pt_y2 = y;
+}
+
+function set_heart_center_x(x)
+{
+	heart_center_x = x;
 }

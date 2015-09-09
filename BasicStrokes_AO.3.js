@@ -1,6 +1,6 @@
 mgraphics.init();
 
-mgraphics.relative_coords = 0;
+mgraphics.relative_coords = 0;	// change this to 1 and adjust the rest of the code
 
 ctrl_pt_x1 = 50; ctrl_pt_y1 = 20;
 
