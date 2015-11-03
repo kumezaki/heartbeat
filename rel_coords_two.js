@@ -161,6 +161,30 @@ function paint_2()
 	}
 }
 
+
+
+//mgraphics coding
+
+function paint_jit()
+{
+	messnamed("mgraphics_msg","set_source_rgba",0.5, 0.5, 0.5, 1.);
+	messnamed("mgraphics_msg","move_to",-1.0,-0.1);
+	messnamed("mgraphics_msg","line_to",-.85, -0.1);
+	messnamed("mgraphics_msg","stroke");
+	messnamed("mgraphics_msg","move_to",-.85, -0.1);
+	messnamed("mgraphics_msg","line_to",-.75,line_pt_y1-0.3);
+	messnamed("mgraphics_msg","stroke");
+	
+	
+}
+		
+		
+
+
+
+
+
+
 //paint is continuously called by the mgraphics engine
 function paint()
 {
@@ -197,3 +221,8 @@ function set_line_pt_y2(y)
 {
 	line_pt_y2 = y;
 }
+
+
+	
+	
+	
