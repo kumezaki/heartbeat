@@ -9,6 +9,35 @@ line_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;
 
 heart_center_x = 0.;
 
+//<<<<<<< Updated upstream
+//=======
+function bang()
+{
+	mgraphics.redraw();
+}
+
+function onresize(w, h)//what is this?
+{
+	post("resize called\n");
+	dis_width = w;
+	dis_height = h;
+}
+
+function paint()
+{
+	with (mgraphics)
+	{
+		set_source_rgba(0.5, 0., 0., 1.);//what is this?
+		set_line_width(10);
+		move_to(0,dis_height/2);
+		line_to(dis_width, dis_height/2);
+		stroke();
+	}
+	
+	paint_heart(0.,0.,1.,1.,0.2);
+}
+
+//>>>>>>> Stashed changes
 function paint_jit()
 {
 	// note that the following are the same as the ones in paint
