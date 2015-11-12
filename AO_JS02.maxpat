@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 163.0, 105.0, 869.0, 759.0 ],
+		"rect" : [ 133.0, 79.0, 973.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,12 +38,65 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-12",
-					"linecount" : 208,
+					"id" : "obj-25",
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 115.0, 475.0, 157.0, 2808.0 ],
+					"patching_rect" : [ 778.0, 550.0, 150.0, 47.0 ],
+					"style" : "",
+					"text" : "how to combine  rel_coords_one with this patch"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "float" ],
+					"patching_rect" : [ 154.0, 52.0, 31.0, 22.0 ],
+					"style" : "",
+					"text" : "t b f"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-22",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 154.0, 22.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 166.0, 82.0, 143.0, 22.0 ],
+					"style" : "",
+					"text" : "paint_heart_center_jit $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"linecount" : 206,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 115.0, 475.0, 164.0, 2768.0 ],
 					"style" : "",
 					"text" : "autowatch = 1;\n\nvar dis_width = 16.;\nvar dis_height = 9.;\n\nctrl_pt_x1 = -0.7; ctrl_pt_y1 = 0.3;\n\nline_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;\n\nheart_center_x = 0.;\n\n\nfunction bang()\n{\n\tmgraphics.redraw();\n}\n\nfunction calcAspect()\n{\n\treturn dis_width/dis_height;\n}\n\nfunction paint_heart_jit(r,g,b,a,center_x)\n{\n\tvar aspect = calcAspect();\n\n\tmessnamed(\"mgraphics_msg\",\"set_source_rgba\",r,g,b,a);\n\t\n\tstart_x = center_x; start_y = 0.2;\n\tend_x = center_x; end_y = -0.7;\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\",start_x*aspect,start_y);\n\tmessnamed(\"mgraphics_msg\",\"curve_to\",center_x+ctrl_pt_x1,start_y+ctrl_pt_y1,center_x-0.7,start_y-0.3,end_x,end_y);\n\n\tmessnamed(\"mgraphics_msg\",\"move_to\",start_x*aspect,start_y);\n\tmessnamed(\"mgraphics_msg\",\"curve_to\",center_x-ctrl_pt_x1,start_y+ctrl_pt_y1,center_x+0.7,start_y-0.3,end_x,end_y);\n\n\tmessnamed(\"mgraphics_msg\",\"fill\");\n}\n\nfunction paint_lineone_jit()\n\n{\n\tvar aspect = calcAspect();\n\t\n\tmessnamed(\"mgraphics_msg\",\"set_source_rgba\",0., 0., 0., 1.);\n\tmessnamed(\"mgraphics_msg\",\"set_line_width\",10);\n\tmessnamed(\"mgraphics_msg\",\"move_to\",-1.0 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -.85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.75 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.75 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.55 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.55 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n//right side\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .32 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .55 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .55 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", 65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", 75 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", 85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", 75 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .1 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\n}\n\nfunction set_ctrl_pt_x1(x)\n{\n\tctrl_pt_x1 = x;\n}\n\nfunction set_line_pt_y1(y)\n{\n\tline_pt_y1 = y;\n}\n\nfunction set_line_pt_x1(x)\n{\n\tline_pt_x1 = x;\n}\n\nfunction set_line_pt_y2(y)\n{\n\tline_pt_y2 = y;\n}\n\nfunction set_heart_center_x(x)\n{\n\theart_center_x = x;\n}\n"
 				}
@@ -144,7 +197,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 45.0, 90.0, 472.0, 22.0 ],
 									"style" : "",
-									"text" : "set_source_rgba 0 0 0 1, paint, set_source_rgba 0 0 0 1, identity_matrix, move_to 0. 0."
+									"text" : "set_source_rgba 1 1 1 1, paint, set_source_rgba 0 0 0 1, identity_matrix, move_to 0. 0."
 								}
 
 							}
@@ -213,7 +266,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 346.0, 256.0, 370.0, 194.0 ]
+					"patching_rect" : [ 346.0, 236.0, 364.0, 205.0 ]
 				}
 
 			}
@@ -224,7 +277,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 103.0, 73.0, 97.0, 22.0 ],
+					"patching_rect" : [ 30.0, 59.0, 97.0, 22.0 ],
 					"style" : "",
 					"text" : "paint_lineone_jit"
 				}
@@ -294,7 +347,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 422.0, 475.0, 30.0, 22.0 ],
+					"patching_rect" : [ 346.0, 460.0, 30.0, 22.0 ],
 					"style" : "",
 					"text" : "jit.+"
 				}
@@ -522,10 +575,37 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 1 ]
 				}
 
 			}
@@ -589,6 +669,10 @@
 				"bootpath" : "~/Desktop/heartbeat",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "jit.+.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"embedsnapshot" : 0
