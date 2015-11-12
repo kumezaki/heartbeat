@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 133.0, 79.0, 973.0, 787.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 683.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -55,10 +55,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 154.0, 52.0, 31.0, 22.0 ],
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 131.0, 139.0, 31.0, 22.0 ],
 					"style" : "",
-					"text" : "t b f"
+					"text" : "t f b"
 				}
 
 			}
@@ -71,32 +71,19 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 154.0, 22.0, 50.0, 22.0 ],
+					"patching_rect" : [ 131.0, 109.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-23",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 166.0, 82.0, 143.0, 22.0 ],
-					"style" : "",
-					"text" : "paint_heart_center_jit $1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-12",
-					"linecount" : 206,
+					"linecount" : 204,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 115.0, 475.0, 164.0, 2768.0 ],
+					"patching_rect" : [ 115.0, 475.0, 167.0, 2741.0 ],
 					"style" : "",
 					"text" : "autowatch = 1;\n\nvar dis_width = 16.;\nvar dis_height = 9.;\n\nctrl_pt_x1 = -0.7; ctrl_pt_y1 = 0.3;\n\nline_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;\n\nheart_center_x = 0.;\n\n\nfunction bang()\n{\n\tmgraphics.redraw();\n}\n\nfunction calcAspect()\n{\n\treturn dis_width/dis_height;\n}\n\nfunction paint_heart_jit(r,g,b,a,center_x)\n{\n\tvar aspect = calcAspect();\n\n\tmessnamed(\"mgraphics_msg\",\"set_source_rgba\",r,g,b,a);\n\t\n\tstart_x = center_x; start_y = 0.2;\n\tend_x = center_x; end_y = -0.7;\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\",start_x*aspect,start_y);\n\tmessnamed(\"mgraphics_msg\",\"curve_to\",center_x+ctrl_pt_x1,start_y+ctrl_pt_y1,center_x-0.7,start_y-0.3,end_x,end_y);\n\n\tmessnamed(\"mgraphics_msg\",\"move_to\",start_x*aspect,start_y);\n\tmessnamed(\"mgraphics_msg\",\"curve_to\",center_x-ctrl_pt_x1,start_y+ctrl_pt_y1,center_x+0.7,start_y-0.3,end_x,end_y);\n\n\tmessnamed(\"mgraphics_msg\",\"fill\");\n}\n\nfunction paint_lineone_jit()\n\n{\n\tvar aspect = calcAspect();\n\t\n\tmessnamed(\"mgraphics_msg\",\"set_source_rgba\",0., 0., 0., 1.);\n\tmessnamed(\"mgraphics_msg\",\"set_line_width\",10);\n\tmessnamed(\"mgraphics_msg\",\"move_to\",-1.0 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -.85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.75 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.75 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.55 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.55 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n//right side\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .32 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .55 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .55 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", 65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", 75 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", 85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", 75 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .1 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\n}\n\nfunction set_ctrl_pt_x1(x)\n{\n\tctrl_pt_x1 = x;\n}\n\nfunction set_line_pt_y1(y)\n{\n\tline_pt_y1 = y;\n}\n\nfunction set_line_pt_x1(x)\n{\n\tline_pt_x1 = x;\n}\n\nfunction set_line_pt_y2(y)\n{\n\tline_pt_y2 = y;\n}\n\nfunction set_heart_center_x(x)\n{\n\theart_center_x = x;\n}\n"
 				}
@@ -266,7 +253,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 346.0, 236.0, 364.0, 205.0 ]
+					"patching_rect" : [ 346.0, 236.0, 320.0, 180.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 180.0 ]
 				}
 
 			}
@@ -290,7 +278,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 172.0, 179.0, 22.0 ],
+					"patching_rect" : [ 30.0, 230.0, 179.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "AO_JS01",
 						"parameter_enable" : 0
@@ -308,9 +296,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 91.0, 121.0, 157.0, 22.0 ],
+					"patching_rect" : [ 131.0, 177.0, 156.0, 22.0 ],
 					"style" : "",
-					"text" : "paint_heart_jit 0. 0. 1. 1. 0.5"
+					"text" : "paint_heart_jit 0. 0. 1. 1. $1"
 				}
 
 			}
@@ -321,7 +309,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 121.0, 37.0, 22.0 ],
+					"patching_rect" : [ 47.0, 121.0, 37.0, 22.0 ],
 					"style" : "",
 					"text" : "open"
 				}
@@ -478,7 +466,7 @@
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 346.0, 192.0, 231.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.mgraphics 320 250 @relative_coords 1"
+					"text" : "jit.mgraphics 320 180 @relative_coords 1"
 				}
 
 			}
@@ -587,25 +575,25 @@
 					"destination" : [ "obj-1", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"source" : [ "obj-23", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-3", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
+					"destination" : [ "obj-13", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-4", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -666,7 +654,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "AO_JS01",
-				"bootpath" : "~/Desktop/heartbeat",
+				"bootpath" : "~/Desktop/Anna 212/heartbeat",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
