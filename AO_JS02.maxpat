@@ -9,7 +9,11 @@
 			"modernui" : 1
 		}
 ,
+<<<<<<< Updated upstream
 		"rect" : [ 34.0, 79.0, 1212.0, 683.0 ],
+=======
+		"rect" : [ 133.0, 79.0, 1216.0, 787.0 ],
+>>>>>>> Stashed changes
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,

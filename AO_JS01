@@ -11,10 +11,7 @@ line_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;
 heart_center_x = 0.;
 
 
-function bang()
-{
-	mgraphics.redraw();
-}
+
 
 function calcAspect()
 {
@@ -37,6 +34,11 @@ function paint_heart_jit(r,g,b,a, center_x)
 	messnamed("mgraphics_msg","curve_to", center_x-ctrl_pt_x1, start_y+ctrl_pt_y1, center_x+0.5,start_y-0.3, end_x,end_y);
 
 	messnamed("mgraphics_msg","fill");
+}
+
+function dynamic(set_ctrl_pt_x1)
+{
+	
 }
 
 function paint_lineone_jit()
@@ -95,6 +97,17 @@ function paint_lineone_jit()
     messnamed("mgraphics_msg","line_to", .75 * aspect, -0.1);
 	messnamed("mgraphics_msg","stroke");
 
+}
+
+function bang()
+{
+	//mgraphics.redraw();
+	//messnamed("mgraphics_msg","clear_surface");
+	messnamed("mgraphics_msg", "set_source_rgba", 1., 0.5, 1., 1.);
+	messnamed("mgraphics_msg", "paint"); 
+    messnamed("mgraphics_msg",  "set_source_rgba", 0., 0., 0., 1.);
+	messnamed("mgraphics_msg", "identity_matrix");
+    messnamed("mgraphics_msg", "move_to", 0., 0.);
 }
 
 function set_ctrl_pt_x1(x)
