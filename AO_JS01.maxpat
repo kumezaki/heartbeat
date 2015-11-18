@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 35.0, 79.0, 997.0, 759.0 ],
+		"rect" : [ 34.0, 107.0, 998.0, 759.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,12 +38,24 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 606.0, 201.0, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "matrix"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-37",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 152.0, 347.0, 111.0, 22.0 ],
+					"patching_rect" : [ 51.5, 374.0, 111.0, 22.0 ],
 					"style" : "",
 					"text" : "receive dynamic_1"
 				}
@@ -68,7 +80,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1216.0, 636.0, 210.0, 22.0 ],
+					"patching_rect" : [ 1212.0, 609.5, 210.0, 22.0 ],
 					"style" : "",
 					"text" : "relcordscontrol 0.6 0.4 set_line_pt_y1"
 				}
@@ -81,7 +93,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 987.0, 636.0, 218.0, 22.0 ],
+					"patching_rect" : [ 984.0, 609.5, 218.0, 22.0 ],
 					"style" : "",
 					"text" : "relcordscontrol -0.8 -0.6 set_line_pt_y2"
 				}
@@ -159,7 +171,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 135.0, 12.0, 50.0, 22.0 ],
+					"patching_rect" : [ 99.0, 9.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -186,7 +198,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 135.0, 82.0, 56.0, 22.0 ],
+					"patching_rect" : [ 99.0, 79.0, 56.0, 22.0 ],
 					"sig" : 0.0,
 					"style" : ""
 				}
@@ -199,7 +211,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 135.0, 45.0, 65.0, 22.0 ],
+					"patching_rect" : [ 99.0, 42.0, 65.0, 22.0 ],
 					"style" : "",
 					"text" : "cycle~ 0.5"
 				}
@@ -235,11 +247,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-12",
-					"linecount" : 206,
+					"linecount" : 204,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 25.0, 527.0, 161.0, 2768.0 ],
+					"patching_rect" : [ 25.0, 527.0, 167.0, 2741.0 ],
 					"style" : "",
 					"text" : "autowatch = 1;\n\nvar dis_width = 16.;\nvar dis_height = 9.;\n\nctrl_pt_x1 = -0.7; ctrl_pt_y1 = 0.3;\n\nline_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;\n\nheart_center_x = 0.;\n\n\nfunction bang()\n{\n\tmgraphics.redraw();\n}\n\nfunction calcAspect()\n{\n\treturn dis_width/dis_height;\n}\n\nfunction paint_heart_jit(r,g,b,a,center_x)\n{\n\tvar aspect = calcAspect();\n\n\tmessnamed(\"mgraphics_msg\",\"set_source_rgba\",r,g,b,a);\n\t\n\tstart_x = center_x; start_y = 0.2;\n\tend_x = center_x; end_y = -0.7;\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\",start_x*aspect,start_y);\n\tmessnamed(\"mgraphics_msg\",\"curve_to\",center_x+ctrl_pt_x1,start_y+ctrl_pt_y1,center_x-0.7,start_y-0.3,end_x,end_y);\n\n\tmessnamed(\"mgraphics_msg\",\"move_to\",start_x*aspect,start_y);\n\tmessnamed(\"mgraphics_msg\",\"curve_to\",center_x-ctrl_pt_x1,start_y+ctrl_pt_y1,center_x+0.7,start_y-0.3,end_x,end_y);\n\n\tmessnamed(\"mgraphics_msg\",\"fill\");\n}\n\nfunction paint_lineone_jit()\n\n{\n\tvar aspect = calcAspect();\n\t\n\tmessnamed(\"mgraphics_msg\",\"set_source_rgba\",0., 0., 0., 1.);\n\tmessnamed(\"mgraphics_msg\",\"set_line_width\",10);\n\tmessnamed(\"mgraphics_msg\",\"move_to\",-1.0 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -.85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.75 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.75 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.55 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", -0.55 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", -0.45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n//right side\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .32 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .45 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .55 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .55 * aspect, line_pt_y1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", 65 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", 75 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", 85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", 75 * aspect, line_pt_y2);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\t\n\tmessnamed(\"mgraphics_msg\",\"move_to\", .85 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\",\"line_to\", .1 * aspect, -0.1);\n\tmessnamed(\"mgraphics_msg\", \"stroke\");\n\n}\n\nfunction set_ctrl_pt_x1(x)\n{\n\tctrl_pt_x1 = x;\n}\n\nfunction set_line_pt_y1(y)\n{\n\tline_pt_y1 = y;\n}\n\nfunction set_line_pt_x1(x)\n{\n\tline_pt_x1 = x;\n}\n\nfunction set_line_pt_y2(y)\n{\n\tline_pt_y2 = y;\n}\n\nfunction set_heart_center_x(x)\n{\n\theart_center_x = x;\n}\n"
 				}
@@ -252,7 +264,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 148.0, 223.0, 24.0, 24.0 ],
+					"patching_rect" : [ 148.0, 185.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -387,7 +399,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 148.0, 259.0, 81.0, 22.0 ],
+					"patching_rect" : [ 148.0, 221.0, 81.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -420,7 +432,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 25.0, 185.0, 97.0, 22.0 ],
+					"patching_rect" : [ 25.0, 269.0, 97.0, 22.0 ],
 					"style" : "",
 					"text" : "paint_lineone_jit"
 				}
@@ -451,7 +463,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 136.0, 185.0, 156.0, 22.0 ],
+					"patching_rect" : [ 136.0, 269.0, 156.0, 22.0 ],
 					"style" : "",
 					"text" : "paint_heart_jit 0. 0. 1. 1. $1"
 				}
@@ -694,7 +706,7 @@
 					"destination" : [ "obj-1", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 145.5, 273.5, 34.5, 273.5 ],
+					"midpoints" : [ 145.5, 343.5, 34.5, 343.5 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -758,7 +770,7 @@
 					"destination" : [ "obj-22", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 181.5, 109.0, 145.5, 109.0 ],
+					"midpoints" : [ 145.5, 109.0, 145.5, 109.0 ],
 					"source" : [ "obj-28", 1 ]
 				}
 
@@ -786,7 +798,7 @@
 					"destination" : [ "obj-36", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 1225.5, 674.5, 751.5, 674.5 ],
+					"midpoints" : [ 1221.5, 674.5, 751.5, 674.5 ],
 					"source" : [ "obj-30", 0 ]
 				}
 
@@ -796,7 +808,7 @@
 					"destination" : [ "obj-36", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 996.5, 674.5, 751.5, 674.5 ],
+					"midpoints" : [ 993.5, 674.5, 751.5, 674.5 ],
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -878,7 +890,7 @@
 					"destination" : [ "obj-7", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 157.5, 288.0, 242.0, 288.0, 242.0, 172.0, 355.5, 172.0 ],
+					"midpoints" : [ 157.5, 246.0, 242.0, 246.0, 242.0, 184.0, 355.5, 184.0 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
