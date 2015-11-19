@@ -107,10 +107,10 @@ function paint_lineone_jit()
 function clearscreen()
 {
 	//mgraphics.redraw();
-	//messnamed("mgraphics_msg","clear_surface");
+	messnamed("mgraphics_msg","clear_surface");
 	messnamed("mgraphics_msg", "set_source_rgba", 1., 1., 1., 1.);
 	messnamed("mgraphics_msg", "paint"); 
-    messnamed("mgraphics_msg",  "set_source_rgba", 0., 0., 0., 1.);
+    messnamed("mgraphics_msg", "set_source_rgba", 0., 0., 0., 1.);
 	messnamed("mgraphics_msg", "identity_matrix");
     messnamed("mgraphics_msg", "move_to", 0., 0.);
 }
@@ -118,8 +118,6 @@ function clearscreen()
 function set_ctrl_pt_x1(x)
 {
 	ctrl_pt_x1 = x;
-	messnamed("mgraphics_msg","relcordscontrol");
-	messnamed("mgraphics_msg","set_ctrl_pt_x1", -0.75,-0.65);
 }
 
 function set_line_pt_y1(y)

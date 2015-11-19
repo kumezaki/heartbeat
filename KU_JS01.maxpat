@@ -378,7 +378,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 583.0, 405.0, 370.0, 194.0 ]
+					"patching_rect" : [ 583.0, 405.0, 320.0, 180.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 180.0 ]
 				}
 
 			}
@@ -391,7 +392,7 @@
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 583.0, 341.0, 231.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.mgraphics 320 250 @relative_coords 1"
+					"text" : "jit.mgraphics 320 180 @relative_coords 1"
 				}
 
 			}
