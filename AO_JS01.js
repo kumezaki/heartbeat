@@ -104,7 +104,7 @@ function paint_lineone_jit()
 
 }
 
-function bang()
+function clearscreen()
 {
 	//mgraphics.redraw();
 	//messnamed("mgraphics_msg","clear_surface");
