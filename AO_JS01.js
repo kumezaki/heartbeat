@@ -19,7 +19,7 @@ function calcAspect()
 	return dis_width/dis_height;
 }
 
-function paint_heart_jit(r,g,b,a, center_x)
+function paint_heart_jit(r,g,b,a, center_x,ctrl_pt_x1,ctrl_pt_y1)
 {
 	var aspect = calcAspect();
 
@@ -42,7 +42,7 @@ function paint_lineone_jit()
 {
 	var aspect = calcAspect();
 	
-	messnamed("mgraphics_msg","set_source_rgba",0., 0., 0., 1.);
+	messnamed("mgraphics_msg","set_source_rgba");
 	messnamed("mgraphics_msg","set_line_width",.03);
 	
 	messnamed("mgraphics_msg","move_to",-.75 * aspect, -0.1);
