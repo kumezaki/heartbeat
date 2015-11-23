@@ -266,3 +266,19 @@ function set_heart_center_x(x)
 {
 	heart_center_x = x;
 }
+
+function switch_example(v)
+{
+	switch (v)
+	{
+		case 0:
+			post("zero received!!!\n");
+			break;
+		case 1: 
+			post("one received!!!\n");
+			break;
+		default: 
+			post("what was that???\n");
+			break;
+	}
+}
