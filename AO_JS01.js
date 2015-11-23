@@ -4,7 +4,6 @@ var dis_width = 16.;
 var dis_height = 9.;
 
 
-
 ctrl_pt_x1 = -0.7; ctrl_pt_y1 = 0.3;
 
 line_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;
@@ -12,21 +11,19 @@ line_pt_y2 = -0.6; line_pt_y1 = 0.3; line_pt_x1 = -.6;
 heart_center_x = 0.;
 
 
-
-
 function calcAspect()
 {
 	return dis_width/dis_height;
 }
 
-function paint_heart_jit(r,g,b,a, center_x,ctrl_pt_x1,ctrl_pt_y1)
+function paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1)
 {
 	var aspect = calcAspect();
 
 	messnamed("mgraphics_msg","set_source_rgba",r,g,b,a);
 		
-	start_x = center_x; start_y = 0.2;
-	end_x = center_x; end_y = -0.7;
+	start_x = center_x;
+	end_x = center_x;
 	
 	messnamed("mgraphics_msg","move_to",start_x * aspect,start_y);
 	messnamed("mgraphics_msg","curve_to",center_x+ctrl_pt_x1, start_y+ctrl_pt_y1, center_x-0.5,start_y-0.3, end_x,end_y);
@@ -42,7 +39,7 @@ function paint_lineone_jit()
 {
 	var aspect = calcAspect();
 	
-	messnamed("mgraphics_msg","set_source_rgba");
+	messnamed("mgraphics_msg","set_source_rgba", 0., 0., 0., 1.);
 	messnamed("mgraphics_msg","set_line_width",.03);
 	
 	messnamed("mgraphics_msg","move_to",-.75 * aspect, -0.1);
@@ -206,17 +203,18 @@ function paint_2(line_pt_y1,line_pt_y2)
 	
 
 function paint()
-
 {
-		//messnamed("mgraphics_msg","switch", scene)
-	
-		switch (scene)
+	switch (scene)
 	{
 		case 1:
-		messnamed("mgraphics_msg",	"paint_1")
+			clearscreen();
+			paint_lineone_jit();
+			paint_linetwo_jit(line_pt_y1, line_pt_y2);
 			break;
 		case 2:
-		messnamed("mgraphics_msg", "paint_2", line_pt_y1,line_pt_y2)
+			clearscreen();
+			paint_lineone_jit();
+			paint_linethree_jit(line_pt_y1, line_pt_y2);
 			break;
 		default:
 			post("scene "+scene+" unknown\n")
