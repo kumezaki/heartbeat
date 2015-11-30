@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 6,
+			"revision" : 5,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1212.0, 683.0 ],
+		"rect" : [ 39.0, 81.0, 932.0, 683.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,12 +38,25 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-12",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 322.0, 461.0, 150.0, 33.0 ],
+					"style" : "",
+					"text" : "r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-25",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 233.0, 149.0, 31.0, 22.0 ],
+					"patching_rect" : [ 233.0, 148.0, 31.0, 22.0 ],
 					"style" : "",
 					"text" : "t b f"
 				}
@@ -56,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 123.0, 145.0, 31.0, 22.0 ],
+					"patching_rect" : [ 64.0, 132.0, 31.0, 22.0 ],
 					"style" : "",
 					"text" : "t b f"
 				}
@@ -71,7 +84,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 233.0, 107.0, 50.0, 22.0 ],
+					"patching_rect" : [ 233.0, 98.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -85,7 +98,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 123.0, 107.0, 50.0, 22.0 ],
+					"patching_rect" : [ 64.0, 94.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -97,7 +110,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 233.0, 195.0, 105.0, 22.0 ],
+					"patching_rect" : [ 245.0, 195.0, 105.0, 22.0 ],
 					"style" : "",
 					"text" : "set_line_pt_y2 $1"
 				}
@@ -162,7 +175,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 123.0, 328.0, 85.0, 22.0 ],
+					"patching_rect" : [ 113.0, 596.0, 85.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "AO_JS01.js",
 						"parameter_enable" : 0
@@ -180,7 +193,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 355.0, 54.0, 72.0, 22.0 ],
+					"patching_rect" : [ 690.0, 63.0, 72.0, 22.0 ],
 					"style" : "",
 					"text" : "loadmess 1"
 				}
@@ -194,7 +207,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 355.0, 87.0, 24.0, 24.0 ],
+					"patching_rect" : [ 690.0, 96.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -209,7 +222,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 355.0, 117.0, 71.0, 23.0 ],
+					"patching_rect" : [ 690.0, 126.0, 71.0, 23.0 ],
 					"style" : "",
 					"text" : "qmetro 50"
 				}
@@ -222,7 +235,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 431.0, 171.0, 103.0, 22.0 ],
+					"patching_rect" : [ 690.0, 190.0, 103.0, 22.0 ],
 					"style" : "",
 					"text" : "r mgraphics_msg"
 				}
@@ -232,10 +245,11 @@
 				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "jit.pwindow",
+					"name" : "u249000445",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 431.0, 294.0, 320.0, 180.0 ],
+					"patching_rect" : [ 690.0, 313.0, 320.0, 180.0 ],
 					"presentation_rect" : [ 0.0, 0.0, 320.0, 180.0 ]
 				}
 
@@ -247,7 +261,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 431.0, 230.0, 231.0, 22.0 ],
+					"patching_rect" : [ 690.0, 249.0, 231.0, 22.0 ],
 					"style" : "",
 					"text" : "jit.mgraphics 320 180 @relative_coords 1"
 				}
@@ -401,7 +415,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "AO_JS01.js",
-				"bootpath" : "~/Desktop/Anna 212/heartbeat",
+				"bootpath" : "~/Desktop/heartbeat",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
