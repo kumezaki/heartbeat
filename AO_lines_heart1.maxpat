@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 38.0, 79.0, 980.0, 708.0 ],
+		"rect" : [ 659.0, 79.0, 1658.0, 708.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,9 +69,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 711.0, 1031.0, 232.0, 22.0 ],
+					"patching_rect" : [ 932.0, 886.0, 232.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.gl.videoplane AO_lines_heart1 640 360"
+					"text" : "jit.gl.videoplane AO_lines_heart1 320 180"
 				}
 
 			}
@@ -91,14 +91,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-97",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 937.0, 1031.0, 380.0, 35.0 ],
+					"patching_rect" : [ 1058.0, 1006.0, 390.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.window AO_lines_heart1 640 360 @floating 1 @colormode 1. 1. 1. 1."
+					"text" : "jit.window AO_lines_heart1 320 180 @floating 1 @colormode 1. 1. 1. 1."
 				}
 
 			}
@@ -214,8 +213,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 937.0, 656.0, 640.0, 360.0 ],
-					"presentation_rect" : [ 0.0, 0.0, 640.0, 360.0 ]
+					"patching_rect" : [ 937.0, 656.0, 320.0, 180.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 180.0 ]
 				}
 
 			}
@@ -1201,8 +1200,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 926.0, 268.0, 640.0, 360.0 ],
-					"presentation_rect" : [ 0.0, 0.0, 640.0, 360.0 ]
+					"patching_rect" : [ 926.0, 268.0, 320.0, 180.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 180.0 ]
 				}
 
 			}
@@ -1213,9 +1212,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 926.0, 229.0, 231.0, 22.0 ],
+					"patching_rect" : [ 926.0, 230.0, 231.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.mgraphics 640 360 @relative_coords 1"
+					"text" : "jit.mgraphics 320 180 @relative_coords 1"
 				}
 
 			}
