@@ -18,7 +18,7 @@ start_y = 0.;end_y = -0.7;
 top_x = 0;
 bottom_x = 0;
 
-r = 1.; g = 0.; b = 0.; a = 1.;
+r = 0.; g = 0.; b = 0.; a = 1.;
 
 function calcAspect()
 {
@@ -68,7 +68,7 @@ function paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1)
 {
 	var aspect = calcAspect(r,g,b,a);
 
-	messnamed("mgraphics_msg","set_source_rgba",1.,0.,0.,1.);
+	messnamed("mgraphics_msg","set_source_rgba",r, g, b, a);
 		
 	//start_x = center_x;
 	//end_x = center_x;
@@ -213,7 +213,7 @@ function paint_9()
 {
 	clearscreen();
 	paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1);
-	post("paint_9", "\n");
+	//post("paint_9", "\n");
 	return;
 }
 
