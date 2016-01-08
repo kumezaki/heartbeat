@@ -1,4 +1,4 @@
-autowatch = 1;
+ autowatch = 1;
 
 //...............global variables.................
 
@@ -215,39 +215,53 @@ function paint_six()
 
 
 
+//.................paint line functions...........
 
-
-
-
-//.................paint functions...........
-function paint_2()
+function paint_1L()
 {
-	clearscreen();
+	paint_one()
+	return;
+}
+
+function paint_2L()
+{
+	//clearscreen();
 	paint_two(line_pt_y3);
 	return;
 }
-function paint_3()
+function paint_3L()
 {
-	clearscreen();
+	//clearscreen();
 	paint_three(line_pt_y3);
 	return;		
 }
 
-function paint_4()
+function paint_4L()
 {
-	clearscreen();
+	//clearscreen();
 	paint_four(line_pt_y4);
 	return;
 }
-function paint_5()
+function paint_5L()
 {
-	clearscreen();
+	//clearscreen();
 	paint_five(line_pt_y4);	
 	return;
 }
-function paint_6()
+function paint_6L()
 {
-	clearscreen();
+	//clearscreen();
+	paint_one();
+	paint_two(line_pt_y3);
+	paint_three(line_pt_y3);
+	paint_four(line_pt_y4);
+	paint_five(line_pt_y4);
+	paint_six();
+	return;
+}
+function paint_7L()
+{
+	//clearscreen();
 	paint_one();
 	paint_two(line_pt_y3);
 	paint_three(line_pt_y3);
@@ -257,19 +271,23 @@ function paint_6()
 	return;
 }
 
-function paint_7()
+
+
+//...................paint heart functions........
+
+function paint_1H()
 {
 	clearscreen();
 	paint_heart_one(r,g,b,a, ctrl_pt_x1);
 	return;
 }
-function paint_8()
+function paint_2H()
 {
 	clearscreen();
 	paint_heart_two(r,g,b,a, ctrl_pt_x1);
 	return;
 }
-function paint_9()
+function paint_3H()
 {
 	clearscreen();
 	paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1);
@@ -277,14 +295,14 @@ function paint_9()
 	return;
 }
 
-function paint_10()
+function paint_4H()
 {
 	clearscreen();
 	paint_heart_three(r,g,b,a, ctrl_pt_x1);
 	post("paint_10", "\n");
 	return;
 }
-function paint_11()
+function paint_5H()
 {
 	clearscreen()
 	paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1);
@@ -296,14 +314,14 @@ function paint_11()
 	paint_six();
 	return;
 }
-function paint_12()
+function paint_6H()
 {
-	clearscreen();
-	paint_one();
-	paint_two(line_pt_y3);
-	paint_three(line_pt_y3);
-	paint_four(line_pt_y4);
-	paint_five(line_pt_y4);
+	//clearscreen();
+	//paint_one();
+	//paint_two(line_pt_y3);
+	//paint_three(line_pt_y3);
+	//paint_four(line_pt_y4);
+	//paint_five(line_pt_y4);
 	paint_heart_four(r,g,b,a,ctrl_pt_x1, start_y, end_y,ctrl_pt_y1 );
 	//post("paint_12", "\n");
 	return;
