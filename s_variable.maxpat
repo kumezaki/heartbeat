@@ -55,7 +55,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 187.0, 294.0, 28.0, 22.0 ],
+					"patching_rect" : [ 160.0, 286.0, 28.0, 22.0 ],
 					"style" : "",
 					"text" : "s js"
 				}
@@ -68,7 +68,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 222.0, 238.0, 67.0, 22.0 ],
+					"patching_rect" : [ 222.0, 238.0, 101.0, 22.0 ],
 					"style" : "",
 					"text" : "#3 $1"
 				}
@@ -81,7 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 160.0, 238.0, 31.0, 22.0 ],
+					"patching_rect" : [ 160.0, 238.0, 49.0, 22.0 ],
 					"style" : "",
 					"text" : "#2"
 				}
