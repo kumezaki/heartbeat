@@ -5,11 +5,8 @@
 var dis_width = 16.;
 var dis_height = 9.;
 
+//..heart
 ctrl_pt_x1 = -0.7; ctrl_pt_y1 = 0.3;
-
-line_pt_y2 = -0.6; line_pt_y1 = 0.45; line_pt_x1 = -.6;
-
-line_pt_y3 = -0.6; line_pt_y4 = 0.45;
 
 start_x = 0.; end_x = 0.;
 //heart_center_x = 0.;
@@ -20,7 +17,21 @@ start_y = 0.;end_y = -0.7;
 top_x = 0;
 bottom_x = 0;
 
+//...right line
+
+line_pt_y2 = -0.6; line_pt_y1 = 0.45; line_pt_x1 = -.6;
+
+//....left line
+line_pt_y3 = -0.6; line_pt_y4 = 0.45;
+
+
+//....colors
 r = 1.; g = 0.; b = 0.; a = 1.;
+
+//...idea 1 functions
+
+x_1 = 0.;  y_1 = 0.; x_2 = 0.; y_2 = 0.; x_3 = 0.; y_3 = 0.;
+
 
 
 
@@ -535,13 +546,20 @@ function idea_1()
 	messnamed("mgraphics_msg","set_line_width",.01);
 
 	//straight line
-	messnamed("mgraphics_msg","move_to", 0.0 *aspect, 0.0);
-	messnamed("mgraphics_msg", "line_to", 0.4, 0.0);
-	messnamed("mgraphics_msg", "stroke");
+	//messnamed("mgraphics_msg","move_to", 0.0 *aspect, 0.0);
+	//messnamed("mgraphics_msg", "line_to", 0.4, 0.0);
+	//messnamed("mgraphics_msg", "stroke");
+	
 	
 	//curve
-	//messnamed("mgraphics_msg","move_to", 1.0 *aspect, 0.5);
-	messnamed("mgraphics_msg","curve_to", 0.7, -0.1, 0.1, 0.1, 0.5, -0.0);
+	messnamed("mgraphics_msg","move_to", 0.4 *aspect, 0.0);
+	//messnamed("mgraphics_msg", "line_to", 0.9, 0.0);
+	messnamed("mgraphics_msg","curve_to", x_1, y_1, x_2, y_2, x_3, y_3);
 	messnamed("mgraphics_msg","stroke");
 	post("idea_1", "\n");
+}
+
+function set_y_2(y)
+{
+	y_2 = y;
 }
