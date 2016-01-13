@@ -85,10 +85,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "bang" ],
+									"outlettype" : [ "bang", "bang", "float" ],
 									"patching_rect" : [ 200.0, 249.0, 41.0, 22.0 ],
 									"style" : "",
-									"text" : "t b f b"
+									"text" : "t b b f"
 								}
 
 							}
@@ -176,7 +176,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 292.0, 313.0, 73.0, 22.0 ],
+									"patching_rect" : [ 425.0, 231.0, 73.0, 22.0 ],
 									"style" : "",
 									"text" : "clearscreen"
 								}
@@ -284,7 +284,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
+									"destination" : [ "obj-14", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-11", 2 ]
@@ -293,7 +293,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
+									"destination" : [ "obj-16", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-11", 1 ]
@@ -302,16 +302,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-11", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
+									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-12", 0 ]
@@ -351,6 +342,15 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-4", 1 ]
 								}
 
 							}
@@ -2254,7 +2254,11 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 427.0, 649.0, 40.0, 49.0 ],
 									"style" : "",
+<<<<<<< HEAD
 									"text" : "163.078323"
+=======
+									"text" : "551.418823"
+>>>>>>> parent of 804219d... added clear screen message to right side subpatch
 								}
 
 							}
@@ -2281,7 +2285,11 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 426.0, 474.0, 50.0, 116.0 ],
 									"style" : "",
+<<<<<<< HEAD
 									"text" : "176.757843 145.33197 149.398804 592.435852"
+=======
+									"text" : "540.17157 669.664246 562.666138 408.927094"
+>>>>>>> parent of 804219d... added clear screen message to right side subpatch
 								}
 
 							}
@@ -2308,7 +2316,11 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 784.75, 374.0, 50.0, 35.0 ],
 									"style" : "",
+<<<<<<< HEAD
 									"text" : "0.000009"
+=======
+									"text" : "0.00098"
+>>>>>>> parent of 804219d... added clear screen message to right side subpatch
 								}
 
 							}
@@ -2322,7 +2334,11 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 633.75, 382.0, 50.0, 35.0 ],
 									"style" : "",
+<<<<<<< HEAD
 									"text" : "464.947937"
+=======
+									"text" : "392.921722"
+>>>>>>> parent of 804219d... added clear screen message to right side subpatch
 								}
 
 							}
@@ -2336,7 +2352,11 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 522.75, 374.0, 48.0, 35.0 ],
 									"style" : "",
+<<<<<<< HEAD
 									"text" : "0.00006"
+=======
+									"text" : "0.00428"
+>>>>>>> parent of 804219d... added clear screen message to right side subpatch
 								}
 
 							}
@@ -2350,7 +2370,11 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 410.0, 382.0, 50.0, 35.0 ],
 									"style" : "",
+<<<<<<< HEAD
 									"text" : "134.167862"
+=======
+									"text" : "408.927094"
+>>>>>>> parent of 804219d... added clear screen message to right side subpatch
 								}
 
 							}
@@ -2417,7 +2441,11 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 315.0, 261.0, 72.0, 22.0 ],
 									"style" : "",
+<<<<<<< HEAD
 									"text" : "23.082472"
+=======
+									"text" : "63.810295"
+>>>>>>> parent of 804219d... added clear screen message to right side subpatch
 								}
 
 							}
