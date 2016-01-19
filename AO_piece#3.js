@@ -17,6 +17,7 @@ start_y = 0.;
 end_y = -0.7;
 top_x = 0;
 bottom_x = 0;
+end_y = 0;
 
 //...right line
 
@@ -27,7 +28,7 @@ line_pt_y3 = -0.6; line_pt_y4 = 0.45;
 
 
 //....colors
-r = 0.; g = 0.; b = 0.; a = 1.;
+//r = 0.; g = 0.; b = 0.; a = 1.;
 
 //...idea 1 functions
 
@@ -68,7 +69,7 @@ function calcAspect()
 
 function paint_heart_one(r,g,b,a)
 {
-	var aspect = calcAspect(r,g,b,a, center_x);
+	var aspect = calcAspect(r,g,b,a);
 	
 	messnamed("mgraphics_msg","set_source_rgba",r,g,b,a);
 	//messnamed("mgraphics_msg","move_to",start_x * aspect,start_y);
@@ -93,7 +94,7 @@ function paint_heart_three(r,g,b,a)
 {
 	var aspect = calcAspect(r,g,b,a);
 
-	messnamed("mgraphics_msg","set_source_rgba",1.,0.,0.,1.);
+	messnamed("mgraphics_msg","set_source_rgba",r,g,b,a);
 	messnamed("mgraphics_msg","move_to",start_x * aspect,start_y);
 	messnamed("mgraphics_msg","curve_to",center_x+ctrl_pt_x1, start_y+ctrl_pt_y1, center_x-0.5,start_y-0.3, end_x,end_y);
 	messnamed("mgraphics_msg","move_to",start_x * aspect,start_y);
@@ -101,13 +102,13 @@ function paint_heart_three(r,g,b,a)
 	messnamed("mgraphics_msg","stroke");
 }
 
-function paint_heart_four(r,g,b,a, ctrl_pt_x1, start_y, end_y, ctrl_pt_y1)
+function paint_heart_four(r,g,b,a, bottom_x, top_x, ctrl_pt_x1, start_y, end_y,ctrl_pt_y1,center_x)
 {
-	var aspect = calcAspect();
+	var aspect = calcAspect(r,g,b,a);
 	
-	start_x = center_x;
-	end_x = center_x;
-	end_y = center_x;
+	//start_x = center_x;
+	//end_x = center_x;
+	//end_y = center_x;
 
 	messnamed("mgraphics_msg","set_source_rgba",r,g,b,a);
 	messnamed("mgraphics_msg","move_to",start_x * aspect,start_y);
@@ -148,13 +149,13 @@ function paint_1H()
 function paint_2H()
 {
 	//clearscreen();
-	paint_heart_two(r,g,b,a);
+	paint_heart_two(1.,0.,0.,1.);
 	return;
 }
 function paint_3H()
 {
 	///clearscreen();
-	paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1);
+	paint_heart_jit(1.,0.,0.,1.,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1);
 	//post("paint_9", "\n");
 	return;
 }
@@ -162,19 +163,19 @@ function paint_3H()
 function paint_4H()
 {
 	//clearscreen();
-	paint_heart_three(r,g,b,a, ctrl_pt_x1, start_y, end_y, ctrl_pt_y1);
+	paint_heart_three(r,0.,0.,1.);
 	return;
 }
 function paint_5H()
 {
 	clearscreen()
-	paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1);
 	paint_one();
 	paint_two(line_pt_y3);
 	paint_three(line_pt_y3);
 	paint_four(line_pt_y4);
 	paint_five(line_pt_y4);
 	paint_six();
+	paint_heart_jit(1.,0.,0.,1.,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1);
 	return;
 }
 function paint_6H()
@@ -185,7 +186,7 @@ function paint_6H()
 	//paint_three(line_pt_y3);
 	//paint_four(line_pt_y4);
 	//paint_five(line_pt_y4);
-	paint_heart_four(r,g,b,a, bottom_x, top_x, ctrl_pt_x1, start_y, end_y,ctrl_pt_y1,center_x);
+	paint_heart_four(1.,0.,0.,1., bottom_x, top_x, ctrl_pt_x1, start_y, end_y,ctrl_pt_y1,center_x);
 	//post("paint_12", "\n");
 	return;
 }
@@ -202,7 +203,7 @@ function paint_6H()
 
 function paint_one()
 {
-	var aspect = calcAspect();
+	var aspect = calcAspect(r,g,b,a);
 	
 	messnamed("mgraphics_msg","set_source_rgba", 0., 1., 0., 1.);
 	messnamed("mgraphics_msg","set_line_width",.01);	
@@ -212,7 +213,7 @@ function paint_one()
 }
 function paint_two(line_pt_y3)
 {
-	var aspect = calcAspect();
+	var aspect = calcAspect(line_pt_y3);
 	
 	messnamed("mgraphics_msg","set_source_rgba", 0., 1., 0., 1.);
 	messnamed("mgraphics_msg","set_line_width",.01);	
@@ -312,7 +313,7 @@ function paint_7L()
 	paint_three(line_pt_y3);
 	paint_four(line_pt_y4);
 	paint_five(line_pt_y4);
-	paint_six(r,g,b,a);
+	paint_six();
 	return;
 }
 
@@ -564,7 +565,32 @@ function idea_1()
 	post("idea_1", "\n");
 }
 
+function set_x_1(x)
+{
+	x_1 = x;
+}
+
+function set_y_1(y)
+{
+	y_1 = y;
+}
+
+function set_x_2(x)
+{
+	x_2 = x
+}
+
 function set_y_2(y)
 {
 	y_2 = y;
+}
+
+function set_x_3(x)
+{
+	x_3 = x
+}
+
+function set_y_3(y)
+{
+	y_3 = y
 }
