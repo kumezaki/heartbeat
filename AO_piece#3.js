@@ -18,6 +18,7 @@ end_y = -0.7;
 top_x = 0;
 bottom_x = 0;
 end_y = 0;
+x_4 = 0.5
 
 //...right line
 
@@ -28,11 +29,11 @@ line_pt_y3 = -0.6; line_pt_y4 = 0.45;
 
 
 //....colors
-//r = 0.; g = 0.; b = 0.; a = 1.;
+r = 0.; g = 0.; b = 0.; a = 1.;
 
 //...idea 1 functions
 
-x_1 = 0.;  y_1 = 0.; x_2 = 0.; y_2 = 0.; x_3 = 0.; y_3 = 0.;
+//x_1 = 0.;  y_1 = 0.; x_2 = 0.; y_2 = 0.; x_3 = 0.; y_3 = 0.;
 
 
 
@@ -69,7 +70,7 @@ function calcAspect()
 
 function paint_heart_one(r,g,b,a)
 {
-	var aspect = calcAspect(r,g,b,a);
+	var aspect = calcAspect();
 	
 	messnamed("mgraphics_msg","set_source_rgba",r,g,b,a);
 	//messnamed("mgraphics_msg","move_to",start_x * aspect,start_y);
@@ -82,7 +83,7 @@ function paint_heart_one(r,g,b,a)
 	
 function paint_heart_two(r,g,b,a)
 {
-	var aspect = calcAspect(r,g,b,a);
+	var aspect = calcAspect();
 	
 	messnamed("mgraphics_msg","set_source_rgba",r,g,b,a);
 	messnamed("mgraphics_msg","move_to",start_x * aspect,start_y);
@@ -92,7 +93,7 @@ function paint_heart_two(r,g,b,a)
 
 function paint_heart_three(r,g,b,a)
 {
-	var aspect = calcAspect(r,g,b,a);
+	var aspect = calcAspect();
 
 	messnamed("mgraphics_msg","set_source_rgba",r,g,b,a);
 	messnamed("mgraphics_msg","move_to",start_x * aspect,start_y);
@@ -104,7 +105,7 @@ function paint_heart_three(r,g,b,a)
 
 function paint_heart_four(r,g,b,a, bottom_x, top_x, ctrl_pt_x1, start_y, end_y,ctrl_pt_y1,center_x)
 {
-	var aspect = calcAspect(r,g,b,a);
+	var aspect = calcAspect();
 	
 	//start_x = center_x;
 	//end_x = center_x;
@@ -120,7 +121,7 @@ function paint_heart_four(r,g,b,a, bottom_x, top_x, ctrl_pt_x1, start_y, end_y,c
 
 function paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1)
 {
-	var aspect = calcAspect(r,g,b,a);
+	var aspect = calcAspect();
 
 	messnamed("mgraphics_msg","set_source_rgba",r, g, b, a);
 		
@@ -143,7 +144,7 @@ function paint_heart_jit(r,g,b,a,center_x,start_y,end_y,ctrl_pt_x1,ctrl_pt_y1)
 function paint_1H()
 {
 	//clearscreen();
-	paint_heart_one(1.,0.,0.,1., 25.);
+	paint_heart_one(1.,0.,0.,1.);
 	return;
 }
 function paint_2H()
@@ -168,7 +169,7 @@ function paint_4H()
 }
 function paint_5H()
 {
-	clearscreen()
+	//clearscreen()
 	paint_one();
 	paint_two(line_pt_y3);
 	paint_three(line_pt_y3);
@@ -203,7 +204,7 @@ function paint_6H()
 
 function paint_one()
 {
-	var aspect = calcAspect(r,g,b,a);
+	var aspect = calcAspect();
 	
 	messnamed("mgraphics_msg","set_source_rgba", 0., 1., 0., 1.);
 	messnamed("mgraphics_msg","set_line_width",.01);	
@@ -302,7 +303,7 @@ function paint_6L()
 	paint_three(line_pt_y3);
 	paint_four(line_pt_y4);
 	paint_five(line_pt_y4);
-	paint_six();
+	paint_six(0.,1.,0.,1.);
 	return;
 }
 function paint_7L()
@@ -313,7 +314,7 @@ function paint_7L()
 	paint_three(line_pt_y3);
 	paint_four(line_pt_y4);
 	paint_five(line_pt_y4);
-	paint_six();
+	paint_six(0.,1.,0.,1.);
 	return;
 }
 
@@ -544,11 +545,11 @@ function set_scene(v)
 
 //.............right lines ideas...............
 
-function idea_1()
+function idea_1(r,g,b,a, x_1, y_1, x_2, y_2, x_3, y_3, x_4)
 {
 	var aspect = calcAspect();
 	
-	messnamed("mgraphics_msg","set_source_rgba", 1., 1., 0., 1.);
+	messnamed("mgraphics_msg","set_source_rgba", r,g,b,a);
 	messnamed("mgraphics_msg","set_line_width",.01);
 
 	//straight line
@@ -558,13 +559,21 @@ function idea_1()
 	
 	
 	//curve
-	messnamed("mgraphics_msg","move_to", 0.4 *aspect, 0.0);
-	//messnamed("mgraphics_msg", "line_to", 0.9, 0.0);
+	messnamed("mgraphics_msg","move_to", x_4 *aspect, -0.1);
+	//messnamed("mgraphics_msg", "line_to", 0.2, -0.1);
 	messnamed("mgraphics_msg","curve_to", x_1, y_1, x_2, y_2, x_3, y_3);
 	messnamed("mgraphics_msg","stroke");
-	post("idea_1", "\n");
+	//post("idea_1", "\n");
 }
-
+function set_x_4(x)
+{
+	x_4 = (x);
+}
+function move_1()
+{
+	idea_1(r,g,b,1., x_1, y_1, x_2, y_2, x_3, y_3, -0.1);
+	return;
+}
 function set_x_1(x)
 {
 	x_1 = x;
