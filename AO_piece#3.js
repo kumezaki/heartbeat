@@ -231,7 +231,7 @@ function paint_one(r,g,b,a)
 	var aspect = calcAspect();
 	
 	messnamed("mgraphics_msg","set_source_rgba", r,g,b,a);
-	messnamed("mgraphics_msg","set_line_width",.05);	
+	messnamed("mgraphics_msg","set_line_width",.03);	
 	messnamed("mgraphics_msg","move_to",-.75 * aspect, -0.1);
 	messnamed("mgraphics_msg","line_to", -.60 * aspect, -0.1);
 	messnamed("mgraphics_msg","stroke");
@@ -241,7 +241,7 @@ function paint_two(r,g,b,a,line_pt_y3)
 	var aspect = calcAspect(line_pt_y3);
 	
 	messnamed("mgraphics_msg","set_source_rgba", r,g,b,a);
-	messnamed("mgraphics_msg","set_line_width",.05);	
+	messnamed("mgraphics_msg","set_line_width",.03);	
 	messnamed("mgraphics_msg","move_to", -0.60 * aspect, -0.1);
 	messnamed("mgraphics_msg","line_to", -0.50 * aspect, line_pt_y3, -0.3); //line_pt_y1
 	messnamed("mgraphics_msg", "stroke");
@@ -251,7 +251,7 @@ function paint_three(r,g,b,a,line_pt_y3)
 	var aspect = calcAspect(line_pt_y3);
 	
 	messnamed("mgraphics_msg","set_source_rgba", r,g,b,a);
-	messnamed("mgraphics_msg","set_line_width",.05);
+	messnamed("mgraphics_msg","set_line_width",.03);
 	messnamed("mgraphics_msg","move_to", -0.40 * aspect, -0.1);
 	messnamed("mgraphics_msg","line_to", -0.50 * aspect, line_pt_y3, -0.3);//line_pt_y1
 	messnamed("mgraphics_msg", "stroke");
@@ -261,7 +261,7 @@ function paint_four(r,g,b,a,line_pt_y4)
 	var aspect = calcAspect(line_pt_y4);
 	
 	messnamed("mgraphics_msg","set_source_rgba", r,g,b,a);
-	messnamed("mgraphics_msg","set_line_width",.05 );
+	messnamed("mgraphics_msg","set_line_width",.03 );
 	messnamed("mgraphics_msg","move_to", -0.40 * aspect, -0.1);
 	messnamed("mgraphics_msg","line_to", -0.30 * aspect, line_pt_y4, 0.3);
 	messnamed("mgraphics_msg", "stroke");
@@ -271,7 +271,7 @@ function paint_five(r,g,b,a,line_pt_y4)
 	var aspect = calcAspect(line_pt_y4);
 	
 	messnamed("mgraphics_msg","set_source_rgba", r,g,b,a);
-	messnamed("mgraphics_msg","set_line_width",.05);
+	messnamed("mgraphics_msg","set_line_width",.03);
 	messnamed("mgraphics_msg","move_to", -0.20 * aspect, -0.1);
 	messnamed("mgraphics_msg","line_to", -0.30 * aspect, line_pt_y4, 0.3);//line_pt_y2
 	messnamed("mgraphics_msg","stroke");
@@ -280,7 +280,7 @@ function paint_six(r,g,b,a)
 {
 	var aspect = calcAspect();
 	messnamed("mgraphics_msg","set_source_rgba", r,g,b,a);
-	messnamed("mgraphics_msg","set_line_width",.05);	
+	messnamed("mgraphics_msg","set_line_width",.03);	
 	messnamed("mgraphics_msg","move_to", -0.20 * aspect, -0.1);
 	messnamed("mgraphics_msg","line_to", .10 * aspect, -0.1);
 	messnamed("mgraphics_msg","stroke");

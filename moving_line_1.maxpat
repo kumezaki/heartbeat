@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 87.0, 177.0, 31.0, 22.0 ],
 					"style" : "",
-					"text" : "300"
+					"text" : "950"
 				}
 
 			}
@@ -81,7 +81,7 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 47.0, 114.0, 99.0, 22.0 ],
+					"patching_rect" : [ 47.0, 114.0, 107.0, 22.0 ],
 					"style" : "",
 					"text" : "scale 0 10 #1 #2"
 				}
